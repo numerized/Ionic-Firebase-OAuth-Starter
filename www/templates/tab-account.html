@@ -1,0 +1,111 @@
+<ion-view view-title="Account">
+    <ion-content>
+      	<div class="list card" ng-if="authData.provider == 'google'">
+		  <div class="item item-avatar">
+		    <img src="{{authData.google.cachedUserProfile.picture}}">
+		    <h2>{{authData.google.cachedUserProfile.name}}</h2>
+		    <p>{{authData.google.cachedUserProfile.link}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		    <p>
+		      Private Data : {{privateData.$value}}
+		    </p>
+		    <p>
+		      Followers : {{authData.google.cachedUserProfile.followers_count}}
+		      <br/>
+		      Following : {{authData.google.cachedUserProfile.friends_count}}
+		    </p>
+		  </div>
+
+		  <div class="row">
+			  <div class="col">
+				  <button class="button button-block button-assertive icon-right ion-log-out"  ng-click="unAuth()">
+				  Disconnect
+			      </button>
+		      </div>
+	      </div>
+	    </div>
+
+	    <div class="list card" ng-if="authData.provider == 'twitter'">
+
+		  <div class="item item-avatar">
+		    <img src="{{authData.twitter.cachedUserProfile.profile_image_url}}">
+		    <h2>{{authData.twitter.cachedUserProfile.name}}</h2>
+		    <p>{{authData.twitter.cachedUserProfile.entities.url.urls[0].expanded_url	}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		    <p>
+		      Private Data : {{privateData.$value}}
+		    </p>
+		    <p>
+		      Followers : {{authData.twitter.cachedUserProfile.followers_count}}
+		      <br/>
+		      Following : {{authData.twitter.cachedUserProfile.friends_count}}
+		    </p>
+		  </div>
+
+		  <div class="row">
+			  <div class="col">
+				  <button class="button button-block button-assertive icon-right ion-log-out"  ng-click="unAuth()">
+				  Disconnect
+			      </button>
+		      </div>
+	      </div>
+	    </div>
+
+      	<div class="list card" ng-if="authData.provider == 'facebook'">
+
+		  <div class="item item-avatar">
+		    <img src="{{authData.facebook.cachedUserProfile.picture.data.url}}">
+		    <h2>{{authData.facebook.cachedUserProfile.name}}</h2>
+		    <p>{{authData.facebook.cachedUserProfile.email}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		    <p>
+		      Private Data : {{privateData.$value}}
+		    </p>
+		    <p>
+		      Friends Data : {{friendsData}}
+		    </p>
+		  </div>
+		  <div class="row">
+		  <div class="col">
+		  
+			<button class="button button-block button-positive icon-left ion-android-contacts" ng-click="inviteFbFriend()">
+			Invite friends
+			</button>
+		   
+		  </div>
+		  </div>
+		  <div class="row">
+		  <div class="col">
+		  <button class="button button-block button-positive icon-left ion-share"  ng-click="postFbStatus()">
+		  Post on Facebook
+	      </button>
+	      </div>
+	      </div>
+
+		  <div class="row">
+		  <div class="col">
+		  <button class="button button-block button-assertive icon-left ion-log-out"  ng-click="unAuth()">
+		  Disconnect
+	      </button>
+	      </div>
+	      </div>
+	      
+
+		</div>
+
+		<div class="row" ng-if="!authData">
+		  <div class="col">
+		  <button class="button button-block button-assertive icon-left ion-log-out"  ng-click="unAuth()">
+		  Disconnect
+	      </button>
+	      </div>
+	      </div>
+	    
+	</ion-content>
+</ion-view>

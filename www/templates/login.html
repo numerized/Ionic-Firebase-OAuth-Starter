@@ -1,0 +1,58 @@
+<style type="text/css">
+.my-animation.ng-enter {
+  /* standard transition code */
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+  opacity:0;
+}
+.my-animation.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+
+  /* in case the stagger doesn't work then these two values
+   must be set to 0 to avoid an accidental CSS inheritance */
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+}
+.my-animation.ng-enter.ng-enter-active {
+  /* standard transition styles */
+  opacity:1;
+}
+
+</style>
+
+<ion-view hide-nav-bar="true">
+<ion-content style="text-align:center; padding-top:2%">
+      <br/>
+      <br/>
+      <br/>
+     
+     	<i style="font-size:64px; color: #586c82" class="icon ion-ios-flower-outline"></i>
+
+     <div class="bsrow">
+	      <div class="col-xs-B-offset-1 col-xs-B-4 my-animation" ng-if="device">
+	      	<button class="button button-block icon-left ion-social-facebook" ng-click="fbAppLogin()">
+	        	Facebook Sign In
+	      	</button>
+      	</div>
+        <div class="col-xs-B-offset-1 col-xs-B-4 my-animation" ng-if="!device">
+          <button class="button button-block icon-left ion-social-facebook"ng-click="fbLogin()">
+            Facebook Sign In
+          </button>
+        </div>
+      	<div class="col-xs-B-offset-2 col-xs-B-4 my-animation">
+	      	<button class="button button-block icon-left ion-social-twitter" ng-click="twitterLogin()">
+	        	Twitter Sign In
+	      	</button>
+      	</div>
+        <div class="col-xs-B-offset-1 col-xs-B-4 my-animation">
+          <button class="button button-block icon-left ion-social-googleplus-outline" ng-click="googleLogin()">
+            Google Sign In
+          </button>
+        </div>
+        
+     </div>
+     </div>
+</ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+/* Empty. Add your own CSS if you like */
+.button {
+	color: #586c82;
+	border: solid #586c82 1px;
+	box-shadow: 0px 2px 0px #586c82;
+}
+
+.ion-nav {
+	color: #586c82!important;
+}
