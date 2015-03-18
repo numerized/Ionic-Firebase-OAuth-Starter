@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'firebase', 'ngCordova', 'ngCordovaOauth'])
+var app = angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'firebase', 'ngCordova', 'ngCordovaOauth', 'pascalprecht.translate'])
 
 .run(function($ionicPlatform, $rootScope, $cordovaDevice) {
   $ionicPlatform.ready(function() {
@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'fireba
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
