@@ -25,35 +25,78 @@
 <ion-view hide-nav-bar="true">
 <ion-content style="text-align:center; padding-top:2%">
       <br/>
+      <br/>
+      <br/>
      
      	<i style="font-size:64px; color: #586c82" class="icon ion-ios-flower-outline"></i>
-
       <h1>{{ 'LOGIN_TITLE' | translate }}</h1>
-      <p>{{ 'LOGIN_TEXT' | translate }}</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
-     <div class="bsrow">
-	      <div class="col-xs-B-offset-1 col-xs-B-4 my-animation" ng-if="device">
-	      	<button class="button button-block icon-left ion-social-facebook" ng-click="fbAppLogin()">
-	        	{{ 'FACEBOOK_SIGNIN' | translate }}
-	      	</button>
-      	</div>
-        <div class="col-xs-B-offset-1 col-xs-B-4 my-animation" ng-if="!device">
-          <button class="button button-block icon-left ion-social-facebook"ng-click="fbLogin()">
-            {{ 'FACEBOOK_SIGNIN' | translate }}
-          </button>
+      <div class="bsrow">
+        <div class="col-sm-offset-1 col-sm-4">
+        <p>{{ 'INTERNAL_LOGIN_TEXT' | translate }}</p>
+          <div class="list">
+          <br/>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Email</span>
+            <input type="text" placeholder="Email" ng-model="login.email">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="Password" ng-model="login.password">
+          </label>
+          </div>
+           <button class="button button-light button-block icon-left ion-log-in" ng-click="userLogin(login.email, login.password)">
+           {{ 'LOGIN_BUTTON' | translate }}
+           </button>
+           <p ng-if="login_message == 'invalid_password'">
+            {{'LOGIN_INVALID_PASSWORD' | translate }}
+           </p>
+           <p ng-if="login_message == 'invalid_user'">
+            {{'LOGIN_INVALID_USER' | translate }}
+           </p>
+
         </div>
-      	<div class="col-xs-B-offset-2 col-xs-B-4 my-animation">
-	      	<button class="button button-block icon-left ion-social-twitter" ng-click="twitterLogin()">
-	        	{{ 'TWITTER_SIGNIN' | translate }}
-	      	</button>
-      	</div>
-        <div class="col-xs-B-offset-1 col-xs-B-4 my-animation">
-          <button class="button button-block icon-left ion-social-googleplus-outline" ng-click="googleLogin()">
-            {{ 'GOOGLE_SIGNIN' | translate }}
-          </button>
-        </div>
-        
+
+      
+
+     
+       <div class="col-sm-offset-2 col-sm-4">
+       
+        <p>{{ 'LOGIN_TEXT' | translate }}</p>
+  	      <div class="col-xs-B-12 my-animation" ng-if="device">
+  	      	<button class="button button-light button-block icon-left ion-social-facebook" ng-click="fbAppLogin()">
+  	        	{{ 'FACEBOOK_SIGNIN' | translate }}
+  	      	</button>
+        	</div>
+          
+          <div class="col-xs-B-12 my-animation" ng-if="!device">
+            <button class="button button-light button-block icon-left ion-social-facebook"ng-click="fbLogin()">
+              {{ 'FACEBOOK_SIGNIN' | translate }}
+            </button>
+          </div>
+        	<div class="col-xs-B-12 my-animation">
+  	      	<button class="button button-light button-block icon-left ion-social-twitter" ng-click="twitterLogin()">
+  	        	{{ 'TWITTER_SIGNIN' | translate }}
+  	      	</button>
+        	</div>
+          <div class="col-xs-B-12 my-animation">
+            <button class="button button-light button-block icon-left ion-social-googleplus-outline" ng-click="googleLogin()">
+              {{ 'GOOGLE_SIGNIN' | translate }}
+            </button>
+          </div>
+          <div class="col-xs-B-12 my-animation">
+            <button class="button button-light button-block icon-left ion-person-add" ng-click="userRegister()">
+              {{ 'USER_REGISTER_BUTTON' | translate }}
+            </button>
+          </div>
+       </div>
+     
+     
      </div>
-     </div>
+     
 </ion-content>
 </ion-view>

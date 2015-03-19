@@ -1,6 +1,40 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $rootScope, $state, $cordovaOauth) {
+.controller('LoginCtrl', function($scope, $rootScope, $state, $cordovaOauth, FirebaseConfig) {
+
+	$scope.login = {};
+
+	$scope.userLogin = function (email, password) {
+
+		var ref = new Firebase(FirebaseConfig.root_url);
+		ref.authWithPassword({
+		  email    : email,
+		  password : password
+		}, function(error, authData) {
+		  if (error) {
+		  	if(error.code == "INVALID_PASSWORD")
+		  	{
+		  		$rootScope.login_message = 'invalid_password';
+		  		$rootScope.$apply();
+		  	}
+		  	else if(error.code == "INVALID_USER")
+		  	{
+		  		$rootScope.login_message = 'invalid_user';
+		  		$rootScope.$apply();
+		  	}
+		    console.log("Login Failed!", error);
+		  } else {
+		    $rootScope.authData = authData;
+		    onAuthUser();
+		    $state.go('tab.account');
+		  }
+		});
+	}
+
+	$scope.userRegister = function () {
+	
+		$state.go('register');
+	}
 
 	var onAuthUser = function () {
 
@@ -9,7 +43,7 @@ angular.module('starter.controllers', [])
 		// here we will just simulate this with an isNewUser boolean
 		var isNewUser = true;
 
-		var ref = new Firebase("https://quality-actions.firebaseio.com");
+		var ref = new Firebase(FirebaseConfig.root_url);
 		ref.onAuth(function(authData) {
 		  if (authData && isNewUser) {
 		    // save the user's profile into Firebase so we can list users,
@@ -36,7 +70,7 @@ angular.module('starter.controllers', [])
 	}
 
 	$scope.googleLogin = function() {
-        var ref = new Firebase("https://quality-actions.firebaseio.com");
+        var ref = new Firebase(FirebaseConfig.root_url);
 		ref.authWithOAuthPopup("google", function(error, authData) {
 		  if (error) {
 		    console.log("Login Failed!", error);
@@ -49,7 +83,7 @@ angular.module('starter.controllers', [])
 	}
 
 	$scope.twitterLogin = function() {
-        var ref = new Firebase("https://quality-actions.firebaseio.com");
+        var ref = new Firebase(FirebaseConfig.root_url);
 		ref.authWithOAuthPopup("twitter", function(error, authData) {
 		  if (error) {
 		    console.log("Login Failed!", error);
@@ -63,7 +97,7 @@ angular.module('starter.controllers', [])
 
 	$scope.fbLogin = function ()
 	{
-		var ref = new Firebase("https://quality-actions.firebaseio.com");
+		var ref = new Firebase(FirebaseConfig.root_url);
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
 		  if (error) {
 		    console.log("Login Failed!", error);
@@ -87,7 +121,7 @@ angular.module('starter.controllers', [])
 
 		var fbAppLoginSuccess = function (userData) {
 
-			var ref = new Firebase("https://quality-actions.firebaseio.com");
+			var ref = new Firebase(FirebaseConfig.root_url);
 
 			ref.authWithOAuthToken("facebook", userData.authResponse.accessToken, function(error, authData) {
 			if (error) {
@@ -112,11 +146,11 @@ angular.module('starter.controllers', [])
 	}
 })
 
-.controller('AccountCtrl', function($scope, $rootScope, $state, $firebaseObject, $cordovaStatusbar) {
+.controller('AccountCtrl', function($scope, $rootScope, $state, $firebaseObject, $cordovaStatusbar, FirebaseConfig) {
   
   $scope.unAuth = function ()
   {
-  	var ref = new Firebase("https://quality-actions.firebaseio.com");
+  	var ref = new Firebase(FirebaseConfig.root_url);
   	ref.unauth();
   	$scope.privateData = null;
   	$rootScope.authData = null;
@@ -136,7 +170,7 @@ angular.module('starter.controllers', [])
   }
 
   
-  	var ref = new Firebase("https://quality-actions.firebaseio.com/welcome_message");
+  	var ref = new Firebase(FirebaseConfig.welcome_message);
   	// download the data into a local object
     var syncObject = $firebaseObject(ref);
     // synchronize the object with a three-way data binding
@@ -146,9 +180,39 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $state) {
 
     
+
+    
+})
+
+.controller('RegisterCtrl', function($scope, $state, FirebaseConfig) {
+
+	var register = {};
+
+    $scope.register = function (email, password) {
+
+    	var ref = new Firebase(FirebaseConfig.root_url);
+		ref.createUser({
+		  firstname: firstname,
+		  lastname : lastname,
+		  displayName: firstname+' '+lastname,
+		  email    : email,
+		  password : password
+		}, function(error, userData) {
+		  if (error) {
+		    console.log("Error creating user:", error);
+		  } else {
+		    console.log("Successfully created user account with uid:", userData.uid);
+		  }
+		});
+    }
+
+    $scope.returnToLogin = function () {
+
+    	$state.go('login');
+    }
 
     
 });

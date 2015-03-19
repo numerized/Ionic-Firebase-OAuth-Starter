@@ -1,0 +1,37 @@
+<ion-view hide-nav-bar="true">
+<ion-content style="text-align:center; padding-top:2%">
+      <br/>
+     
+     	<i style="font-size:64px; color: #586c82" class="icon ion-ios-flower-outline"></i>
+
+      <h1>{{ 'REGISTER_TITLE' | translate }}</h1>
+      <p>{{ 'REGISTER_TEXT' | translate }}</p>
+      <div class="bsrow">
+        <div class="col-sm-offset-4 col-sm-4">
+          <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Email</span>
+            <input type="text" placeholder="Email" ng-model="register.email">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="Password" ng-model="register.password">
+          </label>
+        </div>
+      </div>
+    
+    <div class="bsrow">
+      <div class="col-sm-offset-4 col-sm-4">
+      <br/>
+      <br/>
+       <button class="button button-block icon-left ion-person-add" ng-click="register(register.email, register.password)">
+       {{ 'REGISTER' | translate }}
+       </button>
+
+       <button class="button button-block button-assertive icon-left ion-android-cancel" ng-click="returnToLogin()">
+       {{ 'CANCEL_REGISTER' | translate }}
+       </button>
+      </div>
+    </div>
+</ion-content>
+</ion-view>

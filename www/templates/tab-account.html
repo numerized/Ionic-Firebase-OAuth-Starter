@@ -27,6 +27,27 @@
 	      </div>
 	    </div>
 
+	    <div class="list card" ng-if="authData.provider == 'password'">
+		  <div class="item item-avatar">
+		    <img src="{{authData.google.cachedUserProfile.picture}}">
+		    <h2>{{authData.password.email}}</h2>
+		  </div>
+
+		  <div class="item item-body">
+		    <p>
+		      {{privateData.$value}}
+		    </p>
+		  </div>
+
+		  <div class="row">
+			  <div class="col">
+				  <button class="button button-block button-assertive icon-right ion-log-out"  ng-click="unAuth()">
+				  {{ 'ACCOUNT_DISCONNECT_BUTTON' | translate }}
+			      </button>
+		      </div>
+	      </div>
+	    </div>
+
 	    <div class="list card" ng-if="authData.provider == 'twitter'">
 
 		  <div class="item item-avatar">
@@ -74,7 +95,7 @@
 		  <div class="row">
 		  <div class="col">
 		  
-			<button class="button button-block icon-left ion-android-contacts" ng-click="inviteFbFriend()">
+			<button class="button button-light button-block icon-left ion-android-contacts" ng-click="inviteFbFriend()">
 			{{ 'ACCOUNT_INVITE_FRIENDS_BUTTON' | translate }}
 			</button>
 		   
@@ -82,7 +103,7 @@
 		  </div>
 		  <div class="row">
 		  <div class="col">
-		  <button class="button button-block icon-left ion-share"  ng-click="postFbStatus()">
+		  <button class="button button-light button-block icon-left ion-share"  ng-click="postFbStatus()">
 		  {{ 'ACCOUNT_POST_STATUS_BUTTON' | translate }}
 	      </button>
 	      </div>

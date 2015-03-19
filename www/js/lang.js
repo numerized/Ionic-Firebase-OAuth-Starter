@@ -1,7 +1,8 @@
 app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.translations('en', {
-    'LOGIN_TITLE': 'Hello',
-    'LOGIN_TEXT': 'Choose a platform to sign in',
+    'LOGIN_TITLE': 'Welcome',
+    'LOGIN_TEXT': 'Choose your way to sign in',
+    'INTERNAL_LOGIN_TEXT': 'Connect with an existing account',
     'FACEBOOK_SIGNIN': 'Facebook ',
     'TWITTER_SIGNIN': 'Twitter',
     'GOOGLE_SIGNIN': 'Google',
@@ -15,12 +16,21 @@ app.config(['$translateProvider', function ($translateProvider) {
     'ACCOUNT_DISCONNECT_BUTTON':'Disconnect',
     'ACCOUNT_FRIENDS_DATA':'Friends Infos',
     'ACCOUNT_INVITE_FRIENDS_BUTTON':'Invite Friends',
-    'ACCOUNT_POST_STATUS_BUTTON':'Share On Facebook'
+    'ACCOUNT_POST_STATUS_BUTTON':'Share On Facebook',
+    'USER_REGISTER_BUTTON' : 'Create My Account',
+    'REGISTER_TITLE': 'Create My Account',
+    'REGISTER_TEXT': "Please provide your email and a password",
+    'REGISTER' : 'Sign Up',
+    'CANCEL_REGISTER': "Go Back",
+    'LOGIN_BUTTON':'Me Connecter',
+    'LOGIN_INVALID_PASSWORD': 'Invalid Password',
+    'LOGIN_INVALID_USER': 'Invalid User'
   });
  
   $translateProvider.translations('fr', {
-    'LOGIN_TITLE': 'Bonjour',
-    'LOGIN_TEXT': 'Choisissez une plateforme de connexion',
+    'LOGIN_TITLE': 'Bienvenue',
+    'LOGIN_TEXT': 'Choisissez votre méthode de connexion',
+    'INTERNAL_LOGIN_TEXT': 'Se connecter avec un compte existant',
     'FACEBOOK_SIGNIN': 'Facebook',
     'TWITTER_SIGNIN': 'Twitter',
     'GOOGLE_SIGNIN': 'Google',
@@ -34,7 +44,15 @@ app.config(['$translateProvider', function ($translateProvider) {
     'ACCOUNT_DISCONNECT_BUTTON':'Se déconnecter',
     'ACCOUNT_FRIENDS_DATA':'Infos Amis',
     'ACCOUNT_INVITE_FRIENDS_BUTTON':'Inviter Des Amis',
-    'ACCOUNT_POST_STATUS_BUTTON':'Partager Sur Facebook'
+    'ACCOUNT_POST_STATUS_BUTTON':'Partager Sur Facebook',
+    'USER_REGISTER_BUTTON' : 'Créer Mon Compte',
+    'REGISTER_TITLE': 'Créer Mon Compte',
+    'REGISTER_TEXT': "Merci d'indiquer votre email et un mot de passe",
+    'REGISTER' : "M'enregistrer",
+    'CANCEL_REGISTER': "Retour",
+    'LOGIN_BUTTON':'Sign In',
+    'LOGIN_INVALID_PASSWORD': 'Mot de Passe Erroné',
+    'LOGIN_INVALID_USER': 'Utilisateur Non Valide'
   });
   $translateProvider.fallbackLanguage(['en', 'fr']);
   
