@@ -1,4 +1,4 @@
-<ion-view view-title="Account">
+<ion-view view-title="{{ 'ACCOUNT_VIEW_TITLE' | translate }}">
     <ion-content>
       	<div class="list card" ng-if="authData.provider == 'google'">
 		  <div class="item item-avatar">
@@ -9,19 +9,19 @@
 
 		  <div class="item item-body">
 		    <p>
-		      Private Data : {{privateData.$value}}
+		      {{privateData.$value}}
 		    </p>
 		    <p>
-		      Followers : {{authData.google.cachedUserProfile.followers_count}}
+		      {{ 'ACCOUNT_FOLLOWERS_LABEL' | translate }} : {{authData.google.cachedUserProfile.followers_count}}
 		      <br/>
-		      Following : {{authData.google.cachedUserProfile.friends_count}}
+		      {{ 'ACCOUNT_FRIENDS_LABEL' | translate }} : {{authData.google.cachedUserProfile.friends_count}}
 		    </p>
 		  </div>
 
 		  <div class="row">
 			  <div class="col">
 				  <button class="button button-block button-assertive icon-right ion-log-out"  ng-click="unAuth()">
-				  Disconnect
+				  {{ 'ACCOUNT_DISCONNECT_BUTTON' | translate }}
 			      </button>
 		      </div>
 	      </div>
@@ -37,19 +37,19 @@
 
 		  <div class="item item-body">
 		    <p>
-		      Private Data : {{privateData.$value}}
+		      {{privateData.$value}}
 		    </p>
 		    <p>
-		      Followers : {{authData.twitter.cachedUserProfile.followers_count}}
+		      {{ 'ACCOUNT_FOLLOWERS_LABEL' | translate }}  : {{authData.twitter.cachedUserProfile.followers_count}}
 		      <br/>
-		      Following : {{authData.twitter.cachedUserProfile.friends_count}}
+		      {{ 'ACCOUNT_FOLLOWINGS_LABEL' | translate }}  : {{authData.twitter.cachedUserProfile.friends_count}}
 		    </p>
 		  </div>
 
 		  <div class="row">
 			  <div class="col">
 				  <button class="button button-block button-assertive icon-right ion-log-out"  ng-click="unAuth()">
-				  Disconnect
+				  {{ 'ACCOUNT_DISCONNECT_BUTTON' | translate }}
 			      </button>
 		      </div>
 	      </div>
@@ -65,25 +65,25 @@
 
 		  <div class="item item-body">
 		    <p>
-		      Private Data : {{privateData.$value}}
+		      {{privateData.$value}}
 		    </p>
-		    <p>
-		      Friends Data : {{friendsData}}
+		    <p ng-if="friendsData">
+		      {{ 'ACCOUNT_FRIENDS_DATA' | translate }} : {{friendsData}}
 		    </p>
 		  </div>
 		  <div class="row">
 		  <div class="col">
 		  
-			<button class="button button-block button-positive icon-left ion-android-contacts" ng-click="inviteFbFriend()">
-			Invite friends
+			<button class="button button-block icon-left ion-android-contacts" ng-click="inviteFbFriend()">
+			{{ 'ACCOUNT_INVITE_FRIENDS_BUTTON' | translate }}
 			</button>
 		   
 		  </div>
 		  </div>
 		  <div class="row">
 		  <div class="col">
-		  <button class="button button-block button-positive icon-left ion-share"  ng-click="postFbStatus()">
-		  Post on Facebook
+		  <button class="button button-block icon-left ion-share"  ng-click="postFbStatus()">
+		  {{ 'ACCOUNT_POST_STATUS_BUTTON' | translate }}
 	      </button>
 	      </div>
 	      </div>
@@ -91,7 +91,7 @@
 		  <div class="row">
 		  <div class="col">
 		  <button class="button button-block button-assertive icon-left ion-log-out"  ng-click="unAuth()">
-		  Disconnect
+		  {{ 'ACCOUNT_DISCONNECT_BUTTON' | translate }}
 	      </button>
 	      </div>
 	      </div>
@@ -102,7 +102,7 @@
 		<div class="row" ng-if="!authData">
 		  <div class="col">
 		  <button class="button button-block button-assertive icon-left ion-log-out"  ng-click="unAuth()">
-		  Disconnect
+		  {{ 'ACCOUNT_DISCONNECT_BUTTON' | translate }}
 	      </button>
 	      </div>
 	      </div>

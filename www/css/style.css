@@ -19,5 +19,9 @@
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-	color: #586c82;
+	color: #586c82!important;
+}
+
+.header_color {
+    background-color: #000;
 }

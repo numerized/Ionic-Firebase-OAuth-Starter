@@ -19,6 +19,8 @@
     {
       "id": "com.phonegap.plugins.facebookconnect",
       "locator": "/Users/numerized/Projects/00_Ionic/phonegap-facebook-plugin"
-    }
+    },
+    "org.apache.cordova.globalization",
+    "org.apache.cordova.statusbar"
   ]
 }

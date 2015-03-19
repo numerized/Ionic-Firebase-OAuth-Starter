@@ -1,5 +1,6 @@
-<ion-view view-title="Device">
+<ion-view view-title="{{ 'DEVICE_VIEW_TITLE' | translate }}">
   <ion-content>
-    {{device}}
+    <p ng-if="device">{{ 'DEVICE_LABEL' | translate }} : {{device}}</p>
+    <p ng-if="globalization">{{ 'DEVICE_GLOBALIZATION_LABEL '| translate }} : {{globalization.value}}</p>
   </ion-content>
 </ion-view>

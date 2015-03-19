@@ -28,28 +28,28 @@
      
      	<i style="font-size:64px; color: #586c82" class="icon ion-ios-flower-outline"></i>
 
-      <h1>{{ 'TITLE' | translate }}</h1>
-      <p>{{ 'FOO' | translate }}</p>
+      <h1>{{ 'LOGIN_TITLE' | translate }}</h1>
+      <p>{{ 'LOGIN_TEXT' | translate }}</p>
 
      <div class="bsrow">
 	      <div class="col-xs-B-offset-1 col-xs-B-4 my-animation" ng-if="device">
 	      	<button class="button button-block icon-left ion-social-facebook" ng-click="fbAppLogin()">
-	        	Facebook Sign In
+	        	{{ 'FACEBOOK_SIGNIN' | translate }}
 	      	</button>
       	</div>
         <div class="col-xs-B-offset-1 col-xs-B-4 my-animation" ng-if="!device">
           <button class="button button-block icon-left ion-social-facebook"ng-click="fbLogin()">
-            Facebook Sign In
+            {{ 'FACEBOOK_SIGNIN' | translate }}
           </button>
         </div>
       	<div class="col-xs-B-offset-2 col-xs-B-4 my-animation">
 	      	<button class="button button-block icon-left ion-social-twitter" ng-click="twitterLogin()">
-	        	Twitter Sign In
+	        	{{ 'TWITTER_SIGNIN' | translate }}
 	      	</button>
       	</div>
         <div class="col-xs-B-offset-1 col-xs-B-4 my-animation">
           <button class="button button-block icon-left ion-social-googleplus-outline" ng-click="googleLogin()">
-            Google Sign In
+            {{ 'GOOGLE_SIGNIN' | translate }}
           </button>
         </div>
         

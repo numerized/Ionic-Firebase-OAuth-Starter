@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'firebase', 'ngCordova', 'ngCordovaOauth', 'pascalprecht.translate'])
 
-.run(function($ionicPlatform, $rootScope, $cordovaDevice) {
+.run(function($ionicPlatform, $rootScope, $cordovaDevice, $cordovaGlobalization, $translate, $cordovaStatusbar) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -16,11 +16,35 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'ngResource
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      $cordovaStatusbar.style(1);
+      //$cordovaStatusbar.hide();
+    }
+
+    if (window.navigator.language)
+    {
+      $rootScope.globalization = {"value": window.navigator.language};
+      $translate.use($rootScope.globalization.value);
+    }
+    else if (window.navigator.userLanguage)
+    {
+      $rootScope.globalization = {"value": window.navigator.userLanguage};
+      $translate.use($rootScope.globalization.value);
     }
 
     $rootScope.device = $cordovaDevice.getDevice();
     console.log($rootScope.device);
+
+    $cordovaGlobalization.getPreferredLanguage().then(
+      function(result) {
+        $rootScope.globalization = result;
+        $rootScope.globalization.value = $rootScope.globalization.value.substring(0,2);
+        $translate.use($rootScope.globalization.value);
+        // result
+      },
+      function(error) {
+        $rootScope.globalization = error;
+        // error
+    });
 
   });
 })
