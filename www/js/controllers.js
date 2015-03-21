@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
 
 	$scope.login = {};
 	$scope.session = {};
+	$scope.session2 = {};
 
 	$scope.userLogin = function (email, password) {
 
