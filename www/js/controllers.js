@@ -3,6 +3,7 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, $rootScope, $state, $cordovaOauth, FirebaseConfig) {
 
 	$scope.login = {};
+	$scope.session = {};
 
 	$scope.userLogin = function (email, password) {
 
