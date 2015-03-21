@@ -1,6 +1,6 @@
 app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.translations('en', {
-    'LOGIN_TITLE': 'Welcome',
+    'LOGIN_TITLE': 'Welcome Base',
     'LOGIN_TEXT': 'Choose your way to sign in',
     'INTERNAL_LOGIN_TEXT': 'Connect with an existing account',
     'FACEBOOK_SIGNIN': 'Facebook ',
@@ -30,7 +30,7 @@ app.config(['$translateProvider', function ($translateProvider) {
   });
  
   $translateProvider.translations('fr', {
-    'LOGIN_TITLE': 'Bienvenue',
+    'LOGIN_TITLE': 'Bienvenue Base',
     'LOGIN_TEXT': 'Choisissez votre méthode de connexion',
     'INTERNAL_LOGIN_TEXT': 'Se connecter avec un compte existant',
     'FACEBOOK_SIGNIN': 'Facebook',
