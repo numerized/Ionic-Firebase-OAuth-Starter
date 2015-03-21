@@ -33,7 +33,7 @@ angular.module('login.controllers', [])
 
 	$scope.userRegister = function () {
 		
-		//simple redirect new test
+		//simple redirect new test again
 		$state.go('register');
 	}
 
