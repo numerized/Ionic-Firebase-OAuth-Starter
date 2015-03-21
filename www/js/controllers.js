@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('login.controllers', [])
 
 .controller('LoginCtrl', function($scope, $rootScope, $state, $cordovaOauth, FirebaseConfig) {
 
