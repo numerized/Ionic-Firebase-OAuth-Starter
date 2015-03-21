@@ -22,7 +22,9 @@ app.config(['$translateProvider', function ($translateProvider) {
     'REGISTER_TEXT': "Please provide your email and a password",
     'REGISTER' : 'Sign Up',
     'CANCEL_REGISTER': "Go Back",
-    'LOGIN_BUTTON':'Me Connecter',
+    'LOGIN_BUTTON':'Sign In',
+    'LOGIN_EMAIL_LABEL':'Email Address',
+    'LOGIN_PASSWORD_LABEL':'Password',
     'LOGIN_INVALID_PASSWORD': 'Invalid Password',
     'LOGIN_INVALID_USER': 'Invalid User'
   });
@@ -50,7 +52,9 @@ app.config(['$translateProvider', function ($translateProvider) {
     'REGISTER_TEXT': "Merci d'indiquer votre email et un mot de passe",
     'REGISTER' : "M'enregistrer",
     'CANCEL_REGISTER': "Retour",
-    'LOGIN_BUTTON':'Sign In',
+    'LOGIN_BUTTON':'Se Connecter',
+    'LOGIN_EMAIL_LABEL':'Adresse Email',
+    'LOGIN_PASSWORD_LABEL':'Mot de Passe',
     'LOGIN_INVALID_PASSWORD': 'Mot de Passe Erroné',
     'LOGIN_INVALID_USER': 'Utilisateur Non Valide'
   });

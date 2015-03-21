@@ -16,7 +16,7 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'ngResource
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      $cordovaStatusbar.style(1);
+      $cordovaStatusbar.style();
       //$cordovaStatusbar.hide();
     }
 
