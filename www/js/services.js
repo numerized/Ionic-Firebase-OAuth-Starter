@@ -1,6 +1,6 @@
 app.factory('FirebaseConfig', function() {
 	var root_url = 'https://quality-actions.firebaseio.com';
-	var lol;
+	var pull me;
 	
 	  return {
 	  		'root_url': root_url, 
