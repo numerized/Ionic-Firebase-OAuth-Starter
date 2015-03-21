@@ -1,6 +1,10 @@
 app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.translations('en', {
+<<<<<<< HEAD
     'LOGIN_TITLE': 'Welcome Swipe',
+=======
+    'LOGIN_TITLE': 'Welcome Base',
+>>>>>>> upstream/master
     'LOGIN_TEXT': 'Choose your way to sign in',
     'INTERNAL_LOGIN_TEXT': 'Connect with an existing account',
     'FACEBOOK_SIGNIN': 'Facebook ',
@@ -30,7 +34,11 @@ app.config(['$translateProvider', function ($translateProvider) {
   });
  
   $translateProvider.translations('fr', {
+<<<<<<< HEAD
     'LOGIN_TITLE': 'Bienvenue Swipe',
+=======
+    'LOGIN_TITLE': 'Bienvenue Base',
+>>>>>>> upstream/master
     'LOGIN_TEXT': 'Choisissez votre méthode de connexion',
     'INTERNAL_LOGIN_TEXT': 'Se connecter avec un compte existant',
     'FACEBOOK_SIGNIN': 'Facebook',
