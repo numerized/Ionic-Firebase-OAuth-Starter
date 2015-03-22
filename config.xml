@@ -16,4 +16,13 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <!-- If you're using PhoneGap Build -->
+  <feature name="org.apache.cordova.facebook.Connect">
+      <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+  </feature>
+    <!-- Cordova Plugin -->
+  <gap:plugin name="com.phonegap.plugins.facebookconnect">
+      <param name="APP_ID" value="610353149099454" />
+      <param name="APP_NAME" value="my Value Activities" />
+  </gap:plugin>
 </widget>
